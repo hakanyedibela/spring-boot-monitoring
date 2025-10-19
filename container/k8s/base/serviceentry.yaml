@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: hkn-observability
+  namespace: test
+  labels:
+    app: hkn-observability
+  annotations:
+    app: hkn-observability
+automountServiceAccountToken: true

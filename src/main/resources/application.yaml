@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring-boot-monitoring
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: always
+#  server:
+#    port: 8080
+
