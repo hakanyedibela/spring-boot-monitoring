@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hkn-observability
+spec:
+  template:
+    spec:
+      nodeSelector:
+        label: backend
+        environment: dev
+      containers:
+        - name: spring-boot-monitoring
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"

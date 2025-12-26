@@ -4,7 +4,6 @@ metadata:
   labels:
     app: hkn-observability
   name: hkn-observability
-  namespace: test
 spec:
   replicas: 1
   selector:
@@ -16,6 +15,8 @@ spec:
       labels:
         app: hkn-observability
     spec:
+      nodeSelector:
+        label: backend
       containers:
         - image: spring-boot-monitoring:0.0.1
           name: spring-boot-monitoring
@@ -59,16 +60,7 @@ spec:
             periodSeconds: 5
             timeoutSeconds: 3
             failureThreshold: 3
-#          startupProbe:
-#            httpGet:
-#              path: /actuator/health
-#              port: 8080
-#            initialDelaySeconds: 0
-#            periodSeconds: 5
-#            timeoutSeconds: 3
-#            failureThreshold: 30
       securityContext:
         runAsUser: 1001
         runAsGroup: 3001
         fsGroup: 2001
-

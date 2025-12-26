@@ -7,11 +7,11 @@ namespace: spring-boot
 resources:
   - ../../base
 
-namePrefix: dev-
+namePrefix: preprod-
 
 labels:
   - pairs:
-      environment: dev
+      environment: preprod
 
 replicas:
   - name: hkn-observability
